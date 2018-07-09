@@ -9,7 +9,6 @@ author: binzhou
 * content
 {:toc}
 
----
 
 # pycharm远程配置
 

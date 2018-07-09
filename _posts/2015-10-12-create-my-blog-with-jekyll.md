@@ -9,7 +9,6 @@ tags: jekyll RubyGems
 * content
 {:toc}
 
----
 
 在知乎上看到一些相关的内容，于是选择了在github上用jekyll搭建博客。
 
