@@ -32,6 +32,11 @@ NexT is built for easily use with elegant appearance. First things first, always
 
 把我的仓库fork过去，然后改成你的{username}.github.io即可。有什么问题请随时联系我。
 
+## 更新说明
+
+ - 增加了作者标签20180701
+ - 增加了来比力评论系统20180702
+
 ## 捐赠
 
 微信捐赠链接还是要有的，万一真的有人捐呢哈哈
