@@ -6,13 +6,16 @@ tags:
 category: Network
 ---
 
+测试哈哈哈
+
+<!--more-->
+
 # Google Maglev 工作流程
 
 ![Google Maglev 工作流程](https://nos.netease.com/knowledge/3db49483-ce09-4384-9eec-4963db7c0950)
 
 每个 Google 服务都有一个或者多个 VIP，一个 VIP 和物理 IP 的区别在于 VIP 没有绑给某个特定的网卡。
 
-<!--more-->
 
 **VIP 宣告：**
 
