@@ -23,24 +23,18 @@ from sklearn.externals import joblib #jbolib模块
 ```
 
 # 数据准备
-
 ## 把数据处理成DSSM要求的格式，一个query，一个pos_doc，四个neg_doc
-
-<!--more-->
 
 ```python
 # 处理q1,q2
 import numpy as np
 import pandas as pd
 train = pd.read_csv('mojing/train.csv')
-train = train.iloc[:10000]
 ```
-
 
 ```python
 train.head()
 ```
-
 
 <div>
 <style scoped>
@@ -100,8 +94,7 @@ train.head()
 </table>
 </div>
 
-
-
+<!--more-->
 
 ```python
 a = train[train.label == 1].copy()
