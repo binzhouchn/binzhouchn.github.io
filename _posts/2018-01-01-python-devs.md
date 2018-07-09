@@ -9,8 +9,6 @@ author: binzhou
 * content
 {:toc}
 
----
-
 ## super函数使用基础
 
 实际上，大家对于在Python中如何正确使用super()函数普遍知之甚少。你有时候会看到像下面这样直接调用父类的一个方法：
