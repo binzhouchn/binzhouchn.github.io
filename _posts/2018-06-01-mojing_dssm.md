@@ -25,9 +25,9 @@ from sklearn.externals import joblib #jbolib模块
 
 <!--more-->
 
-# 1. 数据准备
+# 数据准备
 
-## 1.1 把数据处理成DSSM要求的格式，一个query，一个pos_doc，四个neg_doc
+## 把数据处理成DSSM要求的格式，一个query，一个pos_doc，四个neg_doc
 
 
 ```python
@@ -223,7 +223,7 @@ a.head()
 
 
 
-## 1.2 把question替换成words
+## 把question替换成words
 
 
 ```python
@@ -326,7 +326,7 @@ a.head()
 
 
 
-## 1.3 把words进行编码
+## 把words进行编码
 
 
 ```python
@@ -458,8 +458,6 @@ a.head()
 ```
 
 
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -525,8 +523,7 @@ a.head()
 </div>
 
 
-
-## 1.4 数据处理成dssm要求的tensor格式样式
+## 数据处理成dssm要求的tensor格式样式
 
 
 ```python
@@ -542,7 +539,7 @@ for i in range(len(a['query'])):
         neg_l_Ds[j][i] = Variable(torch.from_numpy(np.array(a['neg_doc'][i][j]).reshape(1,len(a['neg_doc'][i][j]))).long())
 ```
 
-# 2. 构建模型
+# 构建模型
 
 
 ```python
@@ -651,7 +648,7 @@ model.cuda()
 
 
 
-# 3. 跑DSSM模型 SGD 一个个样本跑
+# 跑DSSM模型 SGD 一个个样本跑
 
 
 ```python
