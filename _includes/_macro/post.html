@@ -114,6 +114,13 @@
             </span>
           {% endif %}
 
+          {% if post.author %}
+            <span class="post-author" >
+              <span class="post-meta-divider">|</span>
+              <i class="fa fa-user"></i>{{ post.author }}
+            </span>
+          {% endif %}
+
           {% if post.comments %}
             {% if site.duoshuo_shortname or site.duoshuo and site.duoshuo.shortname %}
               <span class="post-comments-count">
