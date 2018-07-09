@@ -9,6 +9,8 @@ author: binzhou
 * content
 {:toc}
 
+---
+
 Dijkstra 算法，用于对有权图(正)进行搜索，找出图中两点的最短距离，既不是DFS搜索，也不是BFS搜索。 <br>
 把Dijkstra 算法应用于无权图，或者所有边的权都相等的图，Dijkstra 算法等同于BFS搜索。
 

@@ -9,6 +9,8 @@ author: binzhou
 * content
 {:toc}
 
+---
+
 ## 本地编译打包Spark应用准备
 
 1.1 文本所介绍的本地编译都是在windows系统下完成的，首先需要确定电脑上已经安装好了JDK和Scala并且配置好了环境变量, 如果配置完成在cmd中输入java -version和scala -version你将看到version信息<br>

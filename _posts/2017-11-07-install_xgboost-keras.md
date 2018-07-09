@@ -9,6 +9,8 @@ author: binzhou
 * content
 {:toc}
 
+---
+
 xboost在windows安装需要自己编译，编译的过程比较麻烦(需要安装visual studio等)，而且需要复杂的软件环境。为了免去编译，我这里把编译好的文件供大家下载安装。有了编译好的文件，xgboost的安装变得超级简单（注：编译好的dll文件仅适用于windows64位操作系统）
 
 
