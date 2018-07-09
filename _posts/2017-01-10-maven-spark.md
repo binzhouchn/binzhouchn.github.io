@@ -9,7 +9,7 @@ author: binzhou
 * content
 {:toc}
 
-## 1. 本地编译打包Spark应用准备
+## 本地编译打包Spark应用准备
 
 1.1 文本所介绍的本地编译都是在windows系统下完成的，首先需要确定电脑上已经安装好了JDK和Scala并且配置好了环境变量, 如果配置完成在cmd中输入java -version和scala -version你将看到version信息<br>
 我所用的jdk版本是1.7.0和scala版本2.11.8，大家可以自行下载然后选择默认位置安装(记住默认位置，后续要设置环境变量)。注意一点：开发Spark-1.5应用程序，必须使用Scala-2.10.4版本；开发Spark-2.0应用程序，必须使用Scala-2.11.8版本
@@ -19,7 +19,7 @@ author: binzhou
 
 <!--more-->
 
-## 2. 本地编译Intellij Idea + Maven(强烈推荐使用的组合)
+## 本地编译Intellij Idea + Maven(强烈推荐使用的组合)
 
 2.1首先需要安装idea下载地址链接 https://www.jetbrains.com/idea/ 和 Maven3.3.9，安装idea到默认位置。
 然后打开idea，在Configure--Plugins–Install plugins from disk导入预先下载的scala-intellij-bin-2016.3.5点击ok然后restart idea即可<br>
@@ -28,7 +28,7 @@ author: binzhou
 2.2打开idea进入Settings，搜索Maven，然后在Maven home directory改成解压maven的存放地址如下图所示：<br>
 ![](https://img-blog.csdn.net/20180708095450509?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-## 3. 以上推荐使用开发环境软件下载
+## 以上推荐使用开发环境软件下载
 
 |软件|版本|下载地址
 |--|--|--
@@ -38,7 +38,7 @@ author: binzhou
 |Scala(for spark-2.0)|scala-2.11.8|[scala-2.11](https://www.scala-lang.org/)
 |Intellij idea|community|[idea](https://www.jetbrains.com/idea/download/)
 
-## 4. 在idea中创建maven工程
+## 在idea中创建maven工程
 
 4.1 打开idea，选择【new project】选择sidebar中Maven后点击next<br>
 ![](https://img-blog.csdn.net/20180708100145145?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
@@ -88,7 +88,7 @@ author: binzhou
 然后进入【File】--【Settings】–【Maven】将User settings file override成安装的maven中的xml文件<br>
 ![](https://img-blog.csdn.net/2018070810201515?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-## 5. 新建scala类文件，写一个简单的wordcount入门程序
+## 新建scala类文件，写一个简单的wordcount入门程序
 
 5.1 在scala代码文件夹下新建Scala类文件：<br>
 ![](https://img-blog.csdn.net/20180708102023105?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
@@ -105,7 +105,7 @@ author: binzhou
 此时在sidebar中会出现以下内容及编译完成后的jar包：<br>
 ![](https://img-blog.csdn.net/20180708102120634?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-## 6. Spark任务提交
+## Spark任务提交
 
 6.1 将编译生成的jar包拷贝出来，放到服务器中，可以用FTP或者在服务器terminal中输入rz(需要安装)选择拷贝出来的jar包上传到服务器<br>
 ![](https://img-blog.csdn.net/20180708102149865?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
@@ -133,7 +133,7 @@ hadoop fs -put word1.txt testData
 6.5 此时再用命令hadoop fs -ls testData我们可以发现多了一个output的文件夹，我们把这个文件夹下载到服务器<br>
  用命令 hadoop fs -get testData/output，我们可以进到output文件夹查看输出结果。
 
-## 7. 最后
+## 最后
 
 至此我们从配置到编译到提交任务简单的走了一遍，如果大家有困惑或者值得改进的地方，请随时和我交流！
 
