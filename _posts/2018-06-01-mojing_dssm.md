@@ -23,6 +23,8 @@ from config import opt
 from sklearn.externals import joblib #jbolib模块
 ```
 
+<!--more-->
+
 # 1. 数据准备
 
 ## 1.1 把数据处理成DSSM要求的格式，一个query，一个pos_doc，四个neg_doc

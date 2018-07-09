@@ -24,6 +24,8 @@ Mappings选local path工程目录，其他的都为/ <br>
 
 done!
 
+<!--more-->
+
 ---
 
 # 远程ipython

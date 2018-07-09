@@ -41,6 +41,9 @@ class C(A,B):
         B.__init__(self)
         print('C.__init__')
 ```
+
+<!--more-->
+
 如果你运行这段代码就会发现Base.init()被调用两次，如下所示：
 ```python
 >>> c = C()
