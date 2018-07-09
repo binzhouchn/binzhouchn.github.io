@@ -9,8 +9,6 @@ author: binzhou
 * content
 {:toc}
 
----
-
 ```python
 import numpy as np
 import pandas as pd
@@ -24,12 +22,11 @@ from config import opt
 from sklearn.externals import joblib #jbolib模块
 ```
 
-<!--more-->
-
 # 数据准备
 
 ## 把数据处理成DSSM要求的格式，一个query，一个pos_doc，四个neg_doc
 
+<!--more-->
 
 ```python
 # 处理q1,q2
