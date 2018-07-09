@@ -4,7 +4,6 @@ layout: post
 categories: python
 tags:  Python Pytorch DSSM
 author: binzhou
-comments: true
 ---
 
 * content
