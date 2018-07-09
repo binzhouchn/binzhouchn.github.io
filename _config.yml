@@ -383,9 +383,9 @@ LiveRe_control: true
 
 # Disqus评论系统，可以用但是得FQ
 disqus:
-  enable: true
+  enable: false
   shortname: binzhouchn
-  count: true
+  count: false
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
   hide: false
