@@ -34,8 +34,8 @@ NexT is built for easily use with elegant appearance. First things first, always
 
 ## 更新说明
 
- - 增加了作者标签20180701
- - 增加了来比力评论系统20180702
+ - 20180701增加了作者标签，_include->_macro->post.html(116-127)
+ - 增加了来比力评论系统20180702(_include添加comments.html，_layouts->post.html(8-9)
 
 ## 捐赠
 
