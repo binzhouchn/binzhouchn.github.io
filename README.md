@@ -4,9 +4,9 @@
 
 NexT 是由 [Hexo NexT](https://github.com/iissnan/hexo-theme-next) 移植而来的 Jekyll 主题。<!--commit: f951075d9b739d26b42472431995fa68d08796aa-->
 
-<a href="http://simpleyyt.github.io/jekyll-theme-next/" target="_blank">在线预览 Preview</a> | <a href="http://simpleyyt.com" target="_blank">Yitao's Blog</a> | <a href="http://theme-next.simpleyyt.com" target="_blank">NexT 使用文档</a> |  [English Documentation](README.en.md)
+<a href="https://binzhouchn.github.io/" target="_blank">在线预览&binzhou's blog</a> | <a href="http://theme-next.iissnan.com/" target="_blank">NexT 使用文档</a>
 
-[![Join the chat at https://gitter.im/simpleyyt/jekyll-theme-next](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jekyll-theme-next/lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+![fill_it](https://badges.gitter.im/Join%20Chat.svg)
 
 ![NexT Schemes](http://iissnan.com/nexus/next/next-schemes.jpg)
 
@@ -30,6 +30,6 @@ NexT is built for easily use with elegant appearance. First things first, always
 
 ## 捐赠
 
-支付宝捐赠链接还是要有的，万一真的有人捐呢。
+微信捐赠链接还是要有的，万一真的有人捐呢。
 
-![支付宝扫码捐赠](http://p1.bpimg.com/567571/9a4a158daee8aa69.png)
+![微信扫码捐赠](https://img-blog.csdn.net/20180709124813798?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
