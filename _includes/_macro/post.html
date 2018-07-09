@@ -128,24 +128,15 @@
           {% endif %}
 
           {% if post.comments %}
-            {% if site.duoshuo_shortname or site.duoshuo and site.duoshuo.shortname %}
+            {% elsif site.LiveRe_control %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="{{ post.url }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elsif site.facebook_comments_plugin.enable %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="{{ post.url | absolute_url }}" itemprop="commentCount">0</span> comments
+                  <span class="post-comments-count livere-comment-count"
+                        data-livere-identifier="{{ post.url }}" itemprop="commentCount"></span>
                 </a>
               </span>
             {% elsif site.disqus.enable and site.disqus.count %}
