@@ -26,11 +26,11 @@ sidebar:
   toc: 文章目录
 
 post:
-  created: 创建于
-  modified: 更新于
+  created: 创建
+  modified: 更新
   sticky: 置顶
-  posted: 发表于
-  in: 分类于
+  posted: 发表
+  in: 分类
   read_more: 阅读全文
   untitled: 未命名
   toc_empty: 此文章未包含目录
@@ -38,8 +38,8 @@ post:
   wordcount: 字数统计
   min2read: 阅读时长
   copyright:
-    author: 本文作者
-    link: 本文链接
+    author: 作者
+    link: 链接
     license_title: 版权声明
     license_content: '本博客所有文章除特别声明外，均采用
       <a href="%s" rel="external nofollow" target="_blank">%s</a> 许可协议。转载请注明出处！'
