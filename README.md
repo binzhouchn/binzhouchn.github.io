@@ -28,8 +28,12 @@ NexT 主旨在于简洁优雅且易于使用，所以首先要尽量确保 NexT 
 NexT is built for easily use with elegant appearance. First things first, always keep things simple.
 
 
+## 使用说明
+
+把我的仓库fork过去，然后改成你的{username}.github.io即可。有什么问题请随时联系我。
+
 ## 捐赠
 
-微信捐赠链接还是要有的，万一真的有人捐呢。
+微信捐赠链接还是要有的，万一真的有人捐呢哈哈
 
 ![](assets/images/wechat_receive.jpg)
