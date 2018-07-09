@@ -32,4 +32,4 @@ NexT is built for easily use with elegant appearance. First things first, always
 
 微信捐赠链接还是要有的，万一真的有人捐呢。
 
-![微信收款码](assets/images/wechat_receive.png)
+![](assets/images/wechat_receive.jpg)
