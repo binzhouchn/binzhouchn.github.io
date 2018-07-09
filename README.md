@@ -6,7 +6,14 @@ NexT 是由 [Hexo NexT](https://github.com/iissnan/hexo-theme-next) 移植而来
 
 <a href="https://binzhouchn.github.io/" target="_blank">在线预览&binzhou's blog</a> | <a href="http://theme-next.iissnan.com/" target="_blank">NexT 使用文档</a>
 
-![fill_it](https://badges.gitter.im/Join%20Chat.svg)
+主页
+![主页](assets/images/main_page.png)
+
+子页
+![子页](assets/images/sub_page.png)
+
+手机端
+![手机端](assets/images/mobile_page.png)
 
 ![NexT Schemes](http://iissnan.com/nexus/next/next-schemes.jpg)
 
