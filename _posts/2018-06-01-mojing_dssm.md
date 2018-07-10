@@ -1,7 +1,7 @@
 ---
 title:  "用pytorch构建一个DSSM神经网络"
 layout: post
-categories: python
+categories: python pytorch
 tags:  Python Pytorch DSSM
 author: binzhou
 ---
