@@ -45,7 +45,7 @@ def Find(array,target):
 a = 'hello there are no big deal'
 
 # 方法一 用list内置的replace函数，面试的时候不一定能用
-def replaceSpace(s,rs='%20'):
+def replaceSpace(s, rs='%20'):
     return s.replace(' ', rs)
 ```
 ```python
@@ -98,7 +98,7 @@ def fib(n):
         return 1
     a, b = (1,1)
     for i in range(2, n):
-        b,a = a, a+b
+        b, a = a, a + b
     return a
 ```
 ```python
@@ -106,7 +106,7 @@ def fib(n):
 import numpy as np
 def fib_matr(n):
 #     return (np.matrix([[1, 1], [1, 0]]) ** (n - 1) * np.matrix([[1], [0]]))[0, 0]
-    return (pow(np.matrix([[1, 1], [1, 0]]),n-1) * np.matrix([[1], [0]]))[0, 0]
+    return (pow(np.matrix([[1, 1], [1, 0]]), n-1) * np.matrix([[1], [0]]))[0, 0]
 ```
 
 ## 最小的K个数
@@ -118,9 +118,9 @@ def GetLeastNumbers_Solution(lists,k):
 #   冒泡法
     length = len(lists)
     for i in range(k):
-        for j in range(i+1,length):
+        for j in range(i+1, length):
             if lists[i] > lists[j]:
-                lists[j],lists[i] = lists[i],lists[j]
+                lists[j], lists[i] = lists[i], lists[j]
     return lists[0:k]
 ```
 ```python
@@ -146,8 +146,7 @@ def GetLeastNumbers_Solution(arr,k):
             right_list.append(le)
     if len(left_list) >= k:
         return GetLeastNumbers_Solution(left_list,k)[:k]
-    else:
-        return (GetLeastNumbers_Solution(left_list,k) + [pivot] + GetLeastNumbers_Solution(right_list,k))[:k] # 比方法二的quick_sort多了个k
+    return (GetLeastNumbers_Solution(left_list,k) + [pivot] + GetLeastNumbers_Solution(right_list,k))[:k] # 比方法二的quick_sort多了个k
 ```
 
 ## 快速排序
@@ -199,7 +198,7 @@ class Solution:
         dd = {}
         for i in numbers:
             dd[i] = 1 if i not in dd else dd[i] + 1
-        dd = sorted(dd.items(),key=lambda x : x[1], reverse=True)[0]
+        dd = sorted(dd.items(), key=lambda x : x[1], reverse=True)[0]
         if dd[1] * 2 > len(numbers):
             return dd[0]
         return 0
