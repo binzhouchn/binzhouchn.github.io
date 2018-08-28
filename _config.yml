@@ -378,6 +378,7 @@ han: false
 # Baidu Analytics ID
 baidu_analytics: 70b7e141dfc0ea2b204682f94ab2e01a
 
+
 # 来比力评论系统
 LiveRe_control: true
 
@@ -491,9 +492,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: E6YH2R550itfx9doX7l4QgES-gzGzoHsz
+  app_key: lgXi29VxUVNxXh4gBSYWYVMB
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
