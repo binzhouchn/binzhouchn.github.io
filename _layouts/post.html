@@ -8,7 +8,7 @@ layout: layout
 <h2 id="comments">Comments</h2>
 {% include comments.html %}
 
-{% if site.leancloud.enable %}
+{% if site.leancloud_visitors.enable %}
    <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-text"> Hits:  </span>
