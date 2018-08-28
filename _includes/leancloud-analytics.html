@@ -1,4 +1,4 @@
-{% if site.leancloud_visitors.enable %}
+{% if site.leancloud.enable %}
 
   <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
@@ -86,7 +86,7 @@
             /* End Set ACL */
             newcounter.set("title", title);// 把文章标题
             newcounter.set("url", url); // 文章url
-            newcounter.set("hits", 1); // 初始点击次数：1次
+            newcounter.set("hits", 500); // 初始点击次数：500次
             newcounter.save(null, { // 上传到LeanCloud服务器中
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
