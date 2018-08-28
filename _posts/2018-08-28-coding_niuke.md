@@ -38,6 +38,8 @@ def Find(array,target):
     return False
 ```
 
+<!--more-->
+
 ## 替换空格
 ```python
 a = 'hello there are no big deal'
