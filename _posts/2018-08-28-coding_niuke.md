@@ -151,3 +151,79 @@ def GetLeastNumbers_Solution(arr,k):
 ```
 
 ## 快速排序
+```python
+a = [4,5,1,6,2,7,3,8]
+
+# 方法一 网上常见的快排实现
+def quick_sort(arr,left,right):
+    if arr == None or len(arr) < 2 or left >= right:
+        return arr
+    low = left
+    high = right
+    pivot = arr[left]
+    while left < right:
+        while left < right and arr[right] >= pivot:
+            right -= 1
+        arr[left],arr[right] = arr[right],arr[left]
+        while left < right and arr[left] <= pivot:
+            left += 1
+        arr[left],arr[right] = arr[right],arr[left]
+    quick_sort(arr, low, left-1)
+    quick_sort(arr, right+1, high)
+```
+```python
+# 方法二
+def quick_sort(arr):
+    if arr == None or len(arr)<=1:
+        return arr
+    pivot = arr[0]
+    left_list, right_list = [], []
+    for le in arr[1:]:
+        if le < pivot:
+            left_list.append(le)
+        else:
+            right_list.append(le)
+    return quick_sort(left_list) + [pivot] + quick_sort(right_list)
+```
+
+## 数组中出现次数超过一半的数字
+```python
+# 解法一 自己的思路，字典加排序(好像运行时间还快一点)
+class Solution:
+    def MoreThanHalfNum_Solution(self, numbers):
+        # write code here
+        if len(numbers) == 0:
+            return 0
+        if len(numbers) == 1:
+            return numbers[0]
+        dd = {}
+        for i in numbers:
+            dd[i] = 1 if i not in dd else dd[i] + 1
+        dd = sorted(dd.items(),key=lambda x : x[1], reverse=True)[0]
+        if dd[1] * 2 > len(numbers):
+            return dd[0]
+        return 0
+```
+```python
+# 解法二 定义一个计数器，如果数组中出现次数超过一半的数字，那么从左到右遍历一次后，计数器一定大于0。
+# 捕获这个使计数器大于0的数字，验证其出现次数是否超过数组长度的一半。
+class Solution:
+    def MoreThanHalfNum_Solution(self, numbers):
+            if not numbers:
+                return 0
+            checkNum = numbers[0]
+            count = 1
+            for n in numbers[1:]:
+                if n == checkNum or count == 0:
+                    count += 1
+                    checkNum = n
+                else:
+                    count -= 1
+            count = sum([1 if checkNum == i else 0 for i in numbers])
+            if count*2 > len(numbers):
+                return checkNum
+            return 0
+```
+
+# day 3
+## 
