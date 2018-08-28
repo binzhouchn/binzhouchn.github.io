@@ -190,15 +190,18 @@
           {% endif %}
 
           {% comment %} LeanCould PageView {% endcomment %}
-          {% if site.leancloud_visitors.enable %}
-             <span id="http://www.cloudchou.com" class="leancloud_visitors meta_data_item" data-flag-title="">
-                 <span class="post-meta-item-icon">
-                   <span class="octicon octicon-eye"></span>
-                 </span>
+          {{% if site.leancloud_visitors.enable %}
+             <span id="{{ post.url | relative_url }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               {% if site.post_meta.item_text %}
+                 <span class="post-meta-item-text">{{__.post.visitors}} </span>
+               {% endif %}
                  <span class="old-visitors-count" style="display: none;"></span>
                  <span class="leancloud-visitors-count"></span>
-                 <span class="post-meta-item-text">次浏览</span>
-            </span>
+             </span>
           {% endif %}
 
           {% if site.busuanzi_count.enable and site.busuanzi_count.page_pv and is_index == false or is_index == nil%}
