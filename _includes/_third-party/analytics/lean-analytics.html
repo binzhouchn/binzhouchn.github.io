@@ -81,7 +81,7 @@
             newcounter.save(null, {
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');
