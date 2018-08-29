@@ -238,3 +238,12 @@ class Solution:
             n >>= 1
         return count
 ```
+
+## 调整数组顺序使奇数位于偶数前面
+```python
+def reOrderArray(arr):
+    odd, even = [], []
+    for i in arr:
+        even.append(i) if i % 2 == 0 else odd.append(i)
+    return odd + even
+```
