@@ -378,10 +378,6 @@ han: false
 # Baidu Analytics ID
 baidu_analytics: 70b7e141dfc0ea2b204682f94ab2e01a
 
-
-# 来比力评论系统
-LiveRe_control: true
-
 # Disqus评论系统，可以用但是得FQ
 disqus:
   enable: false
@@ -410,6 +406,8 @@ changyan:
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
 #livere_uid: your uid
+# 来比力评论系统
+LiveRe_control: true
 
 # Support for gitalk comments system.
 gitalk:
