@@ -94,7 +94,7 @@ train.head()
 </table>
 </div>
 
-<!--more-->
+<!-- more -->
 
 ```python
 a = train[train.label == 1].copy()

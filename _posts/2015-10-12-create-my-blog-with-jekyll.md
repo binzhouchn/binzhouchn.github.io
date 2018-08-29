@@ -12,7 +12,7 @@ tags: jekyll RubyGems
 
 在知乎上看到一些相关的内容，于是选择了在github上用jekyll搭建博客。
 
-<!--more-->
+<!-- more -->
 
 ## 搭建过程
 

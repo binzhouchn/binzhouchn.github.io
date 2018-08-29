@@ -18,7 +18,7 @@ author: binzhou
 1.2 安装完了jdk和scala以后如果打开cmd输入以上命令如果可以显示以上信息则忽略此步，如果出现不是内部或外部命令的提示则需要设置环境变量。具体步骤是 右击【我的电脑】--【更改设置】--【高级】--【环境变量】–系统变量(S)下新建变量名JAVA_HOME,变量值C:\Program Files\Java\jdk1.7.0_17(默认安装路径)，然后在Path变量下添加;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin<br>
 系统变量下新建变量名SCALA_HOME，变量值C:\Program Files (x86)\scala，然后在Path变量下添加;C:\Program Files (x86)\scala\bin，保存并退出。这时cmd中输入命令就能显示了
 
-<!--more-->
+<!-- more -->
 
 ## 本地编译Intellij Idea + Maven(强烈推荐使用的组合)
 

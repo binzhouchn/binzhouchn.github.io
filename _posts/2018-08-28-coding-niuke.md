@@ -38,7 +38,7 @@ def Find(array,target):
     return False
 ```
 
-<!--more-->
+<!-- more -->
 
 ## 替换空格
 ```python
