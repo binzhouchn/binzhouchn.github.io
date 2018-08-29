@@ -225,4 +225,16 @@ class Solution:
 ```
 
 # day 3
-## 
+## 二进制中1的个数
+```python
+# 无论正负，计算机背后存储的都是0，1；所以只要确定整数占几个字节(默认4个人字节，即32位)，然后和1做【与】操作
+class Solution:
+    def NumberOf1(self, n):
+        # write code here
+        count = 0
+        for i in range(0,32):
+            if n & 1:
+                count += 1
+            n >>= 1
+        return count
+```
