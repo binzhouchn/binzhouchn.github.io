@@ -35,6 +35,7 @@ paginate: 20
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md", "vendor"]
 
 # Separator
+# 主页面上文章显示截断（post文章的截断标识符<!-- more -->）
 excerpt_separator: <!-- more -->
 
 # Code Highlighter
