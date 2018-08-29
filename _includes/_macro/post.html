@@ -114,6 +114,19 @@
             </span>
           {% endif %}
 
+          {% if post.author %}
+            <span class="post-author" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-user"></i>
+              </span>
+              {% if site.post_meta.item_text %}
+                <span class="post-meta-item-text">{{ __.post.copyright.author }}</span>
+              {% endif %}
+              {{ post.author }}
+            </span>
+          {% endif %}
+
           {% if post.comments %}
             {% if site.livere_uid %}
               <span class="post-comments-count">
