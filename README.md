@@ -40,7 +40,7 @@ NexT is built for easily use with elegant appearance. First things first, always
 ## 更新说明
 
  - 2018-07-01增加了作者标签，_include->_macro->post.html(117-128)
- - 2018-07-02增加了来比力评论系统(_config.yml修改LiveRe_control为true；_include->_third-party->comments中添加livere.html；_layouts->post.html(8-9)；_include->_macro->post.html(130-140))
+ - 2018-07-02增加了来比力评论系统(_config.yml填写livere_uid；_include->_third-party->comments中添加livere.html不用修改；_include->_macro->post.html(131-141))
  - 2018-08-28增加了阅读次数(_config.yml修改leancloud_visitors为true然后加入appid,key即可；_include->_third-party->analytics中lean-analytics.html不用修改；_include->_macro->post.html(192-205)不用修改)
 
 ## 捐赠
