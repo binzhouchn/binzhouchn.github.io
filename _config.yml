@@ -376,7 +376,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-# baidu_analytics: 70b7e141dfc0ea2b204682f94ab2e01a
+baidu_analytics: 70b7e141dfc0ea2b204682f94ab2e01a
 
 # Disqus评论系统，可以用但是得FQ
 disqus:
