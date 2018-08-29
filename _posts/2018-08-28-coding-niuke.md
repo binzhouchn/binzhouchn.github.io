@@ -257,3 +257,32 @@ sorted(a, key=lambda c:c%2, reverse=True)
 # 然后根据0和1的索引排序 得到[0,0,0,1,1,1,1]对应的数[2,8,4,3,1,5,9]，
 # 最后reverse的时候两块索引整体交换位置[1,1,1,1,0,0,0] 对应的数为[3, 1, 5, 9, 2, 8, 4] 这一系列过程数相对位置不变
 ```
+
+## 数值的整数次方
+```python
+# 解法一 O(n)时间复杂度
+class Solution:
+    def Power(self, base, exponent):
+        # write code here
+        result = 1
+        for i in range(abs(exponent)):
+            result *= base
+        result = result if exponent >= 0 else 1.0/result
+        return result
+```
+```python
+# 解法二 O(logn)
+class Solution:
+    def Power(self, base, exponent):
+        # write code here
+        if exponent == 0:
+            return 1
+        elif exponent == 1:
+            return base
+        else:
+            result = self.Power(base, exponent >> 1)
+            if exponent & 1 == 0:
+                return result * result
+            else:
+                return result * result * base
+```
