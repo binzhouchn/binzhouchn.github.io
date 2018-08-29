@@ -4,22 +4,22 @@
 # ---------------------------------------------------------------
 
 # Site
-title: 周彬的技术专栏
-subtitle: BinZhou's Notes
-description: Python Coder and AI Eng.
-author: binzhou
+title: NexT
+subtitle:
+description:
+author: John Doe
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: zh-Hans
+language: en
 date_format: '%Y-%m-%d'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
 url:
 baseurl:
-permalink: /:year/:month/:day/:title/
+permalink: pretty
 
 # Pagination
-paginate: 20
+paginate: 10
 #paginate_path: "/page:num/"
 #archive:
   #paginate: 10
@@ -35,7 +35,7 @@ paginate: 20
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md", "vendor"]
 
 # Separator
-excerpt_separator: <!--more-->
+#excerpt_separator: <!-- more -->
 
 # Code Highlighter
 ## 'pygments' is unsupported on GitHub Pages now.
@@ -58,7 +58,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: false
+      comments: true
 
 # Atom feed
 feed:
@@ -76,10 +76,10 @@ plugins:
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `assets/` directory.
-favicon: /assets/images/author.jpeg
+favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT, simpleyyt, yitao"
+keywords: "Jekyll, NexT"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -87,7 +87,7 @@ keywords: "Jekyll, NexT, simpleyyt, yitao"
 rss:
 
 # Specify the date when the site was setup
-since: 2017
+#since: 2015
 
 # icon between year and author @Footer
 authoricon: heart
@@ -151,9 +151,9 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-#scheme: Muse
+scheme: Muse
 #scheme: Mist
-scheme: Pisces
+#scheme: Pisces
 
 
 # ---------------------------------------------------------------
@@ -213,11 +213,8 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-social:
-  GitHub: https://github.com/binzhouchn
-  知乎: http://www.zhihu.com/people/binzhouchn
-  WeiBo: https://weibo.com
-  Twitter: http://www.twitter.com
+#social:
+  #LinkLabel: Link
 
 
 # Social Links Icons
@@ -236,7 +233,7 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-avatar: /assets/images/author.jpeg
+#avatar:
 
 
 # Table Of Contents in the Sidebar
@@ -267,7 +264,7 @@ sidebar:
   #  - always  expand for all pages automatically
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
-  display: hide
+  display: post
   #display: always
   #display: hide
   #display: remove
@@ -365,8 +362,8 @@ highlight_theme: normal
 
 # MathJax Support
 mathjax:
-  enable: true
-  per_page: true
+  enable: false
+  per_page: false
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
 # Han Support docs: https://hanzi.pro/
@@ -376,13 +373,16 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-baidu_analytics: 70b7e141dfc0ea2b204682f94ab2e01a
+#baidu_analytics:
 
-# Disqus评论系统，可以用但是得FQ
+# Duoshuo ShortName
+#duoshuo_shortname:
+
+# Disqus
 disqus:
   enable: false
-  shortname: binzhouchn
-  count: false
+  shortname:
+  count: true
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
   hide: false
@@ -406,8 +406,6 @@ changyan:
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
 #livere_uid: your uid
-# 来比力评论系统
-LiveRe_control: false
 
 # Support for gitalk comments system.
 gitalk:
@@ -435,10 +433,10 @@ gitalk:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-google_site_verification: hxyd6b4vb-uzYY6dVuzz4KXhScoVoEUjtiRWYSJVlrY
+#google_site_verification:
 
 # Google Analytics
-google_analytics: UA-67994495-1
+#google_analytics:
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/
@@ -450,6 +448,15 @@ google_analytics: UA-67994495-1
 # Application Insights
 # See https://azure.microsoft.com/en-us/services/application-insights/
 # application_insights:
+
+# Make duoshuo show UA
+# user_id must NOT be null when admin_enable is true!
+# you can visit http://dev.duoshuo.com get duoshuo user id.
+duoshuo_info:
+  ua_enable: true
+  admin_enable: false
+  user_id: 0
+  #admin_nickname: Author
 
 
 # Facebook SDK Support.
@@ -491,8 +498,8 @@ rating:
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
   enable: false
-  app_id: E6YH2R550itfx9doX7l4QgES-gzGzoHsz
-  app_key: lgXi29VxUVNxXh4gBSYWYVMB
+  app_id: #<app_id>
+  app_key: #<app_key>
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -553,7 +560,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: true
+  enable: false
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
@@ -702,4 +709,4 @@ js: assets/js
 images: assets/images
 
 # Theme version
-version: 1.0.1
+version: 5.1.1
