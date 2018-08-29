@@ -115,7 +115,18 @@
           {% endif %}
 
           {% if post.comments %}
-            {% if site.duoshuo_shortname or site.duoshuo and site.duoshuo.shortname %}
+            {% if site.LiveRe_control %}
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="{{ post.url | relative_url }}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count livere-comment-count"
+                        data-livere-identifier="{{ post.url }}" itemprop="commentCount"></span>
+                </a>
+              </span>
+            {% elsif site.duoshuo_shortname or site.duoshuo and site.duoshuo.shortname %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
