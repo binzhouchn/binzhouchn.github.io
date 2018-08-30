@@ -436,6 +436,17 @@ class Solution:
         else:
             self.d[char] = [self.index, 1]
         self.index += 1
+ss = Solution()
+ss.Insert('g')
+ss.Insert('o')
+print(ss.FirstAppearingOnce())
+ss.Insert('g')
+print(ss.FirstAppearingOnce())
+ss.Insert('o')
+print(ss.FirstAppearingOnce())
+# 'g'
+# 'o'
+# '#'
 ```
 
 ## 和为S的两个数字
