@@ -481,5 +481,24 @@ class Solution:
             return False
 ```
 
+## 数据流中的中位数
+```python
+class Solution:
+    def __init__(self):
+        self.ll = []
+    def Insert(self, num):
+        # write code here
+        self.ll.append(num)
+        
+    def GetMedian(self):
+        # write code here
+        if len(self.ll) == 0:
+            return -1
+        order_ll = sorted(self.ll)
+        length = len(order_ll)
+        result = order_ll[length//2] if length & 1 else (order_ll[length//2]+order_ll[length//2-1])/2
+        return result
+```
+
 # day 5
 ## 
