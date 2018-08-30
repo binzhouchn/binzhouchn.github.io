@@ -344,7 +344,7 @@ def merge(left, right):
 ## 数组中的逆序对
 
 解法：<br>
-![](https://img-blog.csdn.net/20180830164258129?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)<br>
+![](https://img-blog.csdn.net/20180830164258129?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 ```python
 class A:
     def __init__(self):
