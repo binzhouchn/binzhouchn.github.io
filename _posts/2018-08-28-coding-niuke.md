@@ -78,6 +78,20 @@ class Solution:
         return lst[::-1]
 ```
 
+## 冒泡排序
+```python
+# 冒泡排序 O(n^2)时间复杂度,把最小的换上来
+def bubble_sort(arr):
+    if not arr or len(arr) < 2:
+        return arr
+    i, j = 0, 0
+    for i in range(len(arr)):
+        for j in range(i,len(arr)):
+            if arr[i] > arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+    return arr
+```
+
 # day 2
 ## 斐波那契数列
 ```python
