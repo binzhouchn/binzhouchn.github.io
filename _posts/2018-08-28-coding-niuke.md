@@ -292,8 +292,8 @@ class Solution:
             return base
         else:
             result = self.get_pos_result(base, exponent >> 1)
-            if exponent & 1 == 0:
-                return result * result
-            else:
+            if exponent & 1:
                 return result * result * base
+            else:
+                return result * result
 ```
