@@ -260,7 +260,13 @@ sorted(a, key=lambda c:c%2, reverse=True)
 
 ## 数值的整数次方
 ```python
-# 解法一 O(n)时间复杂度
+# 解法一 直接用**
+class Solution:
+    def Power(self, base, exponent):
+        return base**exponent
+```
+```python
+# 解法二 O(n)时间复杂度
 class Solution:
     def Power(self, base, exponent):
         # write code here
@@ -271,7 +277,7 @@ class Solution:
         return result
 ```
 ```python
-# 解法二 O(logn)
+# 解法三 O(logn)
 class Solution:
     def Power(self, base, exponent):
         # write code here
