@@ -78,10 +78,10 @@ class Solution:
         return lst[::-1]
 ```
 
-## 冒泡排序
+## 似冒泡排序
 ```python
-# 冒泡排序 O(n^2)时间复杂度,把最小的换上来
-def bubble_sort(arr):
+# 似冒泡排序 O(n^2)时间复杂度,把最小的换上来
+def qusi_bubble_sort(arr):
     if not arr or len(arr) < 2:
         return arr
     i, j = 0, 0
@@ -310,4 +310,33 @@ class Solution:
                 return result * result * base
             else:
                 return result * result
+```
+
+# day 4
+## 归并排序
+
+![](https://img-blog.csdn.net/20180830153510594?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)<br>
+```python
+def merge_sort(lists):
+    # 归并排序
+    if len(lists) <= 1:
+        return lists
+    num = len(lists) >> 1
+    left = merge_sort(lists[:num])
+    right = merge_sort(lists[num:])
+    return merge(left, right)
+
+def merge(left, right):
+    i, j = 0, 0
+    result = []
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result += left[i:]
+    result += right[j:]
+    return result
 ```
