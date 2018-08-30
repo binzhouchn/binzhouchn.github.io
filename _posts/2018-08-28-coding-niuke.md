@@ -338,6 +338,8 @@ def merge(left, right):
             j += 1
     result += left[i:]
     result += right[j:]
+    ## 左边或右边list走完了，肯定会有一方剩下的直接append就行，肯定是左或右同一组最大的几个剩下
+    # result += left[i:] if len(right[j:]) == 0 else right[j:]
     return result
 ```
 
@@ -464,6 +466,19 @@ class Solution:
             else:
                 start += 1
         return []
+```
+
+## 表示数值的字符串
+```python
+class Solution:
+    # s字符串
+    def isNumeric(self, s):
+        # write code here
+        try:
+            float(s)
+            return True
+        except Exception as e:
+            return False
 ```
 
 # day 5
