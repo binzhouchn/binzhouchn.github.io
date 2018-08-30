@@ -361,6 +361,7 @@ class Solution:
 ```
 
 > 解法二 用merge sort的思想，归并过程中添加一个count（时间复杂度O(nlogn)）：<br>
+
 ![](https://img-blog.csdn.net/20180830164258129?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 ```python
 # 解法二 O(nlogn)时间复杂度
