@@ -396,3 +396,21 @@ aa = A()
 aa.merge_sort(lst)
 print(aa.count) # 即逆序对数
 ```
+
+## 第一个只出现一次的字符
+```python
+class Solution:
+    def FirstNotRepeatingChar(self, s):
+        if not s or len(s) == 0:
+            return -1
+        if len(s) == 1:
+            return 0
+        d = {}
+        for i in range(len(s)):
+            if s[i] in d:
+                d[s[i]][1] += 1
+            else:
+                d[s[i]] = [i, 1]
+        ll = sorted(filter(lambda x : x[1][1] == 1, d.items()), key=lambda x : x[1][0])
+        return -1 if len(ll) == 0 else ll[0][1][0]
+```
