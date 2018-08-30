@@ -277,16 +277,21 @@ class Solution:
         return result
 ```
 ```python
-# 解法三 O(logn)
+# 解法三 O(logn)时间复杂度
 class Solution:
     def Power(self, base, exponent):
         # write code here
+        result = self.get_pos_result(base, abs(exponent))
+        result = result if exponent >= 0 else 1.0/result
+        return result
+        
+    def get_pos_result(self, base ,exponent):
         if exponent == 0:
             return 1
         elif exponent == 1:
             return base
         else:
-            result = self.Power(base, exponent >> 1)
+            result = self.get_pos_result(base, exponent >> 1)
             if exponent & 1 == 0:
                 return result * result
             else:
