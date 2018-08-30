@@ -414,3 +414,22 @@ class Solution:
         ll = sorted(filter(lambda x : x[1][1] == 1, d.items()), key=lambda x : x[1][0])
         return -1 if len(ll) == 0 else ll[0][1][0]
 ```
+
+## 和为S的两个数字
+```python
+# 开头和结尾两个指针向中间移动
+class Solution:
+    def FindNumbersWithSum(self, array, tsum):
+        # write code here
+        start, end = 0, len(array)-1
+        while start < end:
+            if array[start] + array[end] == tsum:
+                return array[start], array[end]
+            elif array[start] + array[end] > tsum:
+                end -= 1
+            else:
+                start += 1
+        return []
+```
+
+## 
