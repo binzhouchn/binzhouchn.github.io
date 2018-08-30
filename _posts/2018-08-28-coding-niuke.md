@@ -415,6 +415,29 @@ class Solution:
         return -1 if len(ll) == 0 else ll[0][1][0]
 ```
 
+## 字符流中第一个不重复的字符
+```python
+class Solution:
+    # 返回对应char
+    def __init__(self):
+        self.index = 0
+        self.d = {}
+    def FirstAppearingOnce(self):
+        # write code here
+        if not self.d or len(self.d) == 0:
+            return '#'
+        ll = sorted(filter(lambda x : x[1][1] == 1, self.d.items()), key=lambda x : x[1][0])
+        return '#' if len(ll) == 0 else ll[0][0]
+        
+    def Insert(self, char):
+        # write code here
+        if char in self.d:
+            self.d[char][1] += 1
+        else:
+            self.d[char] = [self.index, 1]
+        self.index += 1
+```
+
 ## 和为S的两个数字
 ```python
 # 开头和结尾两个指针向中间移动
@@ -432,4 +455,3 @@ class Solution:
         return []
 ```
 
-## 
