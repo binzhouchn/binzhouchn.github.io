@@ -343,7 +343,24 @@ def merge(left, right):
 
 ## 数组中的逆序对
 
-解法：<br>
+```python
+# 解法一 暴力解法，O(n^2)时间复杂度
+class Solution:
+    def InversePairs(self, data):
+        # write code here
+        if not data or len(data) < 2:
+            return 0
+        count = 0
+        i, j = len(data)-1, len(data)-1
+        while j > 0:
+            for i in range(j):
+                if data[i] > data[j]:
+                    count += 1
+            j -= 1
+        return count
+```
+
+解法二 用merge sort的思想，归并过程中添加一个count（时间复杂度O(nlogn)）：<br>
 ![](https://img-blog.csdn.net/20180830164258129?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 ```python
 class A:
@@ -368,7 +385,7 @@ class A:
             else:
                 result.append(right[j])
                 j += 1
-                self.count += (len(left)-i) # 就比merge sort多了这一行，左右合并的时候如果右边list的数小则统计这时左边还剩多少个  
+                self.count += (len(left)-i) # 就比merge sort多了这一行，左右合并的时候如果右边list的数小则统计这时左边还剩多少个(具体解释看上图说明)  
         result += left[i:]
         result += right[j:]
         return result
