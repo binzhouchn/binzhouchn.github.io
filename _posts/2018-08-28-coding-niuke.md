@@ -340,3 +340,40 @@ def merge(left, right):
     result += right[j:]
     return result
 ```
+
+## 数组中的逆序对
+
+解法：<br>
+![](https://img-blog.csdn.net/20180830164258129?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3F1YW50YmFieQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)<br>
+```python
+class A:
+    def __init__(self):
+        self.count = 0
+    def merge_sort(self,lists):
+        # 归并排序
+        if len(lists) <= 1:
+            return lists
+        num = len(lists) >> 1
+        left = self.merge_sort(lists[:num])
+        right = self.merge_sort(lists[num:])
+        return self.merge(left, right)
+
+    def merge(self,left, right):
+        i, j = 0, 0
+        result = []
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                result.append(left[i])
+                i += 1
+            else:
+                result.append(right[j])
+                j += 1
+                self.count += (len(left)-i) # 就比merge sort多了这一行，左右合并的时候如果右边list的数小则统计这时左边还剩多少个  
+        result += left[i:]
+        result += right[j:]
+        return result
+
+aa = A()
+aa.merge_sort(lst)
+print(aa.count) # 即逆序对数
+```
