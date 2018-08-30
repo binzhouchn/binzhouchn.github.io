@@ -123,6 +123,42 @@ def fib_matr(n):
     return (pow(np.matrix([[1, 1], [1, 0]]), n-1) * np.matrix([[1], [0]]))[0, 0]
 ```
 
+## 快速排序
+```python
+a = [4,5,1,6,2,7,3,8]
+
+# 方法一 网上常见的快排实现
+def quick_sort(arr,left,right):
+    if arr == None or len(arr) < 2 or left >= right:
+        return arr
+    low = left
+    high = right
+    pivot = arr[left]
+    while left < right:
+        while left < right and arr[right] >= pivot:
+            right -= 1
+        arr[left],arr[right] = arr[right],arr[left]
+        while left < right and arr[left] <= pivot:
+            left += 1
+        arr[left],arr[right] = arr[right],arr[left]
+    quick_sort(arr, low, left-1)
+    quick_sort(arr, right+1, high)
+```
+```python
+# 方法二
+def quick_sort(arr):
+    if arr == None or len(arr)<=1:
+        return arr
+    pivot = arr[0]
+    left_list, right_list = [], []
+    for le in arr[1:]:
+        if le < pivot:
+            left_list.append(le)
+        else:
+            right_list.append(le)
+    return quick_sort(left_list) + [pivot] + quick_sort(right_list)
+```
+
 ## 最小的K个数
 ```python
 # 方法一 利用冒泡法，临近的数字两两进行比较,按照从小到大的顺序进行交换,如果前面的值比后面的大，则交换顺序。这样一趟过去后,最小的数字被交换到了第一位；
@@ -161,42 +197,6 @@ def GetLeastNumbers_Solution(arr,k):
     if len(left_list) >= k:
         return GetLeastNumbers_Solution(left_list,k)[:k]
     return (GetLeastNumbers_Solution(left_list,k) + [pivot] + GetLeastNumbers_Solution(right_list,k))[:k] # 比方法二的quick_sort多了个k
-```
-
-## 快速排序
-```python
-a = [4,5,1,6,2,7,3,8]
-
-# 方法一 网上常见的快排实现
-def quick_sort(arr,left,right):
-    if arr == None or len(arr) < 2 or left >= right:
-        return arr
-    low = left
-    high = right
-    pivot = arr[left]
-    while left < right:
-        while left < right and arr[right] >= pivot:
-            right -= 1
-        arr[left],arr[right] = arr[right],arr[left]
-        while left < right and arr[left] <= pivot:
-            left += 1
-        arr[left],arr[right] = arr[right],arr[left]
-    quick_sort(arr, low, left-1)
-    quick_sort(arr, right+1, high)
-```
-```python
-# 方法二
-def quick_sort(arr):
-    if arr == None or len(arr)<=1:
-        return arr
-    pivot = arr[0]
-    left_list, right_list = [], []
-    for le in arr[1:]:
-        if le < pivot:
-            left_list.append(le)
-        else:
-            right_list.append(le)
-    return quick_sort(left_list) + [pivot] + quick_sort(right_list)
 ```
 
 ## 数组中出现次数超过一半的数字
