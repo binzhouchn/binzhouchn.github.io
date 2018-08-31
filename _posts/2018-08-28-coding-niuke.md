@@ -9,7 +9,8 @@ author: binzhou
 * content
 {:toc}
 
-每日一刷 2018/8/27
+每日一刷 2018/8/27<br>
+推荐教材：https://facert.gitbooks.io/python-data-structure-cn/
 
 # day 1
 ## 二维数组中的查找
