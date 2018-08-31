@@ -541,4 +541,51 @@ class Solution:
             return False     
 ```
 
-## 
+## 把字符串转换成整数
+```python
+# 方法一 不用int但是可以用eval函数
+class Solution:
+    def StrToInt(self, s):
+        # write code here
+        try:
+            return eval(s)
+        except Exception as e:
+            return 0
+```
+```python
+# 方法二
+def get_flag(s):
+    if s[0] == '-':
+        return '-', s[1:]
+    elif s[0] == '+':
+        return '+', s[1:]
+    else:
+        return '+', s
+def get_num(s):
+    length = len(s)
+    result = 0
+    for i in range(length):
+        result += (ord(s[i])-ord('0'))*10**(length-1-i)
+    return result
+    
+def StrToInt(s):
+    if not s or len(s) == 0:
+        return 0
+    if (s[0] == '-' and s[1] == '0') or (s[0] == '+' and s[1] == '0') or s[0] == '0':
+        return 0
+    for i in s:
+        if i not in list('+-123456789e'):
+            return 0
+    
+    ll = s.split('e')
+    if len(ll) == 2:
+        flag, ll[0] = get_flag(ll[0])
+        return get_num(ll[0])*10**get_num(ll[1]) if flag == '+' else -get_num(ll[0])*10**get_num(ll[1])
+    elif len(ll) == 1:
+        flag, ll[0] = get_flag(ll[0])
+        return get_num(ll[0]) if flag == '+' else -get_num(ll[0])
+    else:
+        return 0
+```
+
+## 不用加减乘除算加法
