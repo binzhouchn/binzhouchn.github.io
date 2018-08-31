@@ -591,6 +591,7 @@ def StrToInt(s):
 ## 不用加减乘除算加法
 ```python
 # 参考自https://shawnhardy.me/index.php/2018/02/26/lintcode-001-a-b-wen-ti/
+# 这篇参考讲的通俗 http://tieba.baidu.com/p/3372695585
 class Solution:
     """
     @param a: An integer
