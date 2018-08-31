@@ -538,6 +538,7 @@ class Solution:
             return True
         else:
             duplication[0] = -1
-            return False
-        
+            return False     
 ```
+
+## 
