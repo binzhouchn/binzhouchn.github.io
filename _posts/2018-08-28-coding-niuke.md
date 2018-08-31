@@ -504,6 +504,7 @@ class Solution:
 ## 把数组排成最小的数
 ```python
 from functools import cmp_to_key
+
 def ff(arr):
     if not arr or len(arr) == 0:
         return -1
@@ -514,4 +515,29 @@ def ff(arr):
     return int(''.join(ll))
 ```
 
-## 
+## 数组中重复的数字
+```python
+class Solution:
+    # 这里要特别注意~找到任意重复的一个值并赋值到duplication[0]，找不到则赋值-1给duplication[0]
+    # 函数返回True/False
+    def duplicate(self, numbers, duplication):
+        # write code here
+        if not numbers or len(numbers) < 2:
+            duplication[0] = -1
+            return False
+        d = {}
+        for i in range(len(numbers)):
+            if numbers[i] in d:
+                d[numbers[i]][1] += 1
+            else:
+                d[numbers[i]] = [i, 1]
+        # d.items()得到的是元组列表[(2,[0,3]),(0,[5,2]),..]
+        ll = sorted(filter(lambda x : x[1][1] > 1,d.items()), key=lambda x : x[1][0])
+        if len(ll) > 0:
+            duplication[0] = ll[0][0]
+            return True
+        else:
+            duplication[0] = -1
+            return False
+        
+```
