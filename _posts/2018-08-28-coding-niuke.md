@@ -502,3 +502,16 @@ class Solution:
 
 # day 5
 ## 把数组排成最小的数
+```python
+from functools import cmp_to_key
+def ff(arr):
+    if not arr or len(arr) == 0:
+        return -1
+    if len(arr) == 1:
+        return arr[0]
+    arr = map(str, arr)
+    ll = sorted(arr, key=cmp_to_key(lambda x,y:int(x+y)-int(y+x)))
+    return int(''.join(ll))
+```
+
+## 
