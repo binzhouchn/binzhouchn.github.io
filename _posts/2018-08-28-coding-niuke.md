@@ -641,3 +641,16 @@ class Solution:
             curnum += 1
         return baselist[-1]
 ```
+
+## 求1+2+3+...+n
+```python
+# 方法一 递归
+def Sum_Solution(n):
+    return n and (n+Sum_Solution(n-1))
+```
+```python
+# 方法二 reduce
+from functools import reduce
+def Sum_Solution(n):
+    return reduce(lambda x, y : x + y, range(1, n+1))
+```
