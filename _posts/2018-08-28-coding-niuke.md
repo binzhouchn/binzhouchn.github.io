@@ -654,3 +654,22 @@ from functools import reduce
 def Sum_Solution(n):
     return reduce(lambda x, y : x + y, range(1, n+1))
 ```
+
+## 滑动窗口的最大值
+```python
+class Solution:
+    def maxInWindows(self, num, size):
+        # write code here
+        if not num or size == 0 or len(num) < size:
+            return []
+        if len(num) == size:
+            return [max(num)]
+        result = []
+        for i in range(0, len(num)-size+1):
+            result.append(max(num[i:i+size]))
+        return result
+```
+
+# day 7
+
+## 
