@@ -607,3 +607,37 @@ class Solution:
             a, b = (a ^ b) & limit, (a & b) << 1
         return a if a & 1 << 32 == 0 else a | (~limit)
 ```
+
+# day 6
+
+## 丑数
+
+思路：最直接的暴力解法是从1开始依次判断数字是否为丑数，直到达到要求的丑数个数。当然这种方法肯定是会TLE的，所以我们分析一下丑数的生成特点(这里把1排除)：<br>
+因为丑数只包含质因子2，3，5，假设我们已经有n-1个丑数，按照顺序排列，且第n-1的丑数为M。那么第n个丑数一定是由这n-1个丑数分别乘以2，3，5，得到的所有大于M的结果中，最小的那个数。<br>
+事实上我们不需要每次都计算前面所有丑数乘以2，3，5的结果，然后再比较大小。因为在已存在的丑数中，一定存在某个数T2，在它之前的所有数乘以2都小于已有丑数，而T2×2的结果一定大于M，同理，也存在这样的数T3，T5，我们只需要标记这三个数即可。
+
+```python
+class Solution:
+    def GetUglyNumber_Solution(self, index):
+        # write code here
+        if index == 0:
+            return 0
+        # 1作为特殊数直接保存
+        baselist = [1]
+        m2 = m3 = m5 = 0
+        curnum = 1
+        while curnum < index:
+            minnum = min(baselist[m2] * 2, baselist[m3] * 3, baselist[m5] * 5)
+            baselist.append(minnum)
+            # 找到第一个乘以2的结果大于当前最大丑数M的数字，也就是T2
+            while baselist[m2] * 2 <= minnum:
+                m2 += 1
+            # 找到第一个乘以3的结果大于当前最大丑数M的数字，也就是T3
+            while baselist[m3] * 3 <= minnum:
+                m3 += 1
+            # 找到第一个乘以5的结果大于当前最大丑数M的数字，也就是T5
+            while baselist[m5] * 5 <= minnum:
+                m5 += 1
+            curnum += 1
+        return baselist[-1]
+```
