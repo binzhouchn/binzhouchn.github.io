@@ -326,7 +326,7 @@ def merge_sort(arr):
     left = merge_sort(arr[:num])
     right = merge_sort(arr[num:])
     return merge(left, right)
- 
+
 def merge(left, right):
     i, j = 0, 0
     result = []
