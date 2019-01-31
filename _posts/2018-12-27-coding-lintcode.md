@@ -4083,6 +4083,3 @@ class Solution:
             f[i] = max(f[i-1], f[i-2]+A[i])
         return f[n-1]
 ```
-
-###
-
