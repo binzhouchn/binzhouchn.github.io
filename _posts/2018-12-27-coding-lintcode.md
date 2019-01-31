@@ -3,16 +3,14 @@ title:  "编程-LintCode"
 layout: post
 categories: python 编程-lintcode
 tags:  Python
-author: 周彬
+author: binzhou
 ---
 
 * content
 {:toc}
 
 # 数据结构与算法(python)
-
-
-**chapter_2 二分法(Binary Search)**
+## chapter_2 二分法(Binary Search)
 
 第一境界（二分位置 之 OOXX）
 
@@ -40,7 +38,7 @@ author: 周彬
 
 <!-- more -->
 
-**chapter_3 二叉树与分治法(Binary Tree & Divide Conquer)**
+## chapter_3 二叉树与分治法(Binary Tree & Divide Conquer)
 
  - [二叉树的前序遍历](#二叉树的前序遍历)
  - [二叉树的中序遍历](#二叉树的中序遍历)
@@ -66,7 +64,7 @@ author: 周彬
  - [Same Tree](#same_tree)
  - [翻转二叉树](#翻转二叉树)
  
-**chapter_4 宽度优先搜索(Breadth First Search)**
+## chapter_4 宽度优先搜索(Breadth First Search)
 
 什么时候应该用BFS？<br>
 
@@ -97,7 +95,7 @@ author: 周彬
  - [僵尸矩阵](#僵尸矩阵)
  - [骑士的最短路线](#骑士的最短路线)
  
-**chapter_5 深度优先搜索(Depth First Search)**
+## chapter_5 深度优先搜索(Depth First Search)
 
 碰到让你找所有方案的题，一定是DFS<br>
 90%DFS的题，要么是排列，要么是组合<br>
@@ -124,7 +122,7 @@ author: 周彬
 复杂度怎么算？ O(答案个数 * 构造每个答案的时间复杂度)<br>
 非递归怎么办？ 必“背”程序<br>
 
-**chapter_6 链表与数组(Linked List & Array)**
+## chapter_6 链表与数组(Linked List & Array)
 
 Linked List
 
@@ -159,7 +157,7 @@ Array<br>
  - [最长连续序列](#最长连续序列)
  
  
-**chapter_7 两根指针(Two Pointers)**
+## chapter_7 两根指针(Two Pointers)
 
  - [移动零](#移动零)
  - [去除重复元素](#去除重复元素)
@@ -176,7 +174,7 @@ Array<br>
  - [四数之和](#四数之和)
  - [两数和 - 差等于目标值](#两数和_差等于目标值)
 
-**chapter_8 数据结构(Data Structure)**
+## chapter_8 数据结构(Data Structure)
 
 独孤九剑 —— 破箭式<br>
 BFS的主要数据结构是Queue<br>
@@ -193,7 +191,7 @@ DFS的主要数据结构是Stack<br>
  - [丑数 II](#丑数2)
  - [最高频的K个单词](#最高频的k个单词)
 
-**chapter_9 动态规划(Dynamic Programming)**
+## chapter_9 动态规划(Dynamic Programming)
 
 通过一道经典题理解动态规划<br>
 1、递归与动规的联系与区别<br>
@@ -228,6 +226,7 @@ DFS的主要数据结构是Stack<br>
  - [编辑距离 Edit Distance](#编辑距离)
  - [不同的子序列](#不同的子序列)
  - [交叉字符串](#交叉字符串)
+ - [打劫房屋](#打劫房屋)
  
 ---
 
@@ -350,11 +349,11 @@ class Solution:
         start = 0
         end = len(nums) - 1
         while start + 1 < end:
-            mid = int((end - start) / 2 + start)
-            if nums[mid] > nums[end]:
-                start = mid
-            else:
+            mid = start + (end - start) // 2
+            if nums[mid] < nums[end]:
                 end = mid
+            else:
+                start = mid
         if nums[start] < nums[end]:
             return nums[start]
         return nums[end]
@@ -620,19 +619,14 @@ class Solution:
         start = 1
         end = max(L)
         while start + 1 < end:
-            mid = ((end - start) >> 1) + start
-            r = sum([x//mid for x in L])
-            if r == k:
-                start = mid
-            elif r > k:
+            mid = start + (end - start) // 2
+            if sum([x // mid for x in L]) >= k:
                 start = mid
             else:
                 end = mid
-        print(start)
-        print(end)
-        if sum([x//end for x in L]) >= k:
+        if sum([x // end for x in L]) >= k:
             return end
-        if sum([x//start for x in L]) >= k:
+        if sum([x // start for x in L]) >= k:
             return start
         return 0
 ```
@@ -662,26 +656,25 @@ class Solution:
             return 0
         start = max(pages)
         end = sum(pages)
-        if k == 1:
-            return end
         while start + 1 < end:
-            mid = ((end - start) >> 1) + start
-            if self.check(pages, mid) <= k:
+            mid = start + (end - start) // 2
+            if self.check(pages, k, mid) == k:
+                end = mid
+            elif self.check(pages, k, mid) < k:
                 end = mid
             else:
                 start = mid
-        if self.check(pages, start) <= k:
+        if self.check(pages, k, start) <= k:
             return start
         return end
-        
-    def check(self, pages, time_limit):
+    def check(self, pages, k, time_limit):
+        p_sum = 0
         count = 1
-        cul_pages = 0
         for p in pages:
-            if cul_pages + p > time_limit:
+            if p + p_sum > time_limit:
                 count += 1
-                cul_pages = 0
-            cul_pages += p
+                p_sum = 0
+            p_sum += p
         return count
 ```
 
@@ -1092,23 +1085,23 @@ class Solution:
     @param: target: An integer
     @return: all valid paths
     """
-    res = []
     def binaryTreePathSum(self, root, target):
         # write your code here
         if root is None:
             return []
-        path = []
-        self.helper(root, path, target)
+        self.res = []
+        self.helper(root, [], target)
         return self.res
     def helper(self, root, path, target):
         if root is None:
-            return []
+            return
         path.append(root.val)
         if root.left is None and root.right is None:
             if sum(path) == target:
-                self.res.append(path.copy())
-        self.helper(root.left, path.copy(), target)
-        self.helper(root.right, path.copy(), target)
+                self.res.append(list(path))
+        self.helper(root.left, list(path), target)
+        self.helper(root.right, list(path), target)
+        path.pop()
 ```
 
 ### 二叉树的路径和2
@@ -1136,7 +1129,7 @@ class Solution:
         for i in range(l, -1, -1):
             tmp -= path[i]
             if tmp == 0:
-                self.res.append(path[i:].copy())
+                self.res.append(list(path[i:]))
         self.helper(root.left, target, path, l+1)
         self.helper(root.right, target, path, l+1)
         path.pop()
@@ -2008,7 +2001,7 @@ class Solution:
 
 ### 字符串解码
 
-[字符串解码]()<br>
+[字符串解码](https://www.lintcode.com/problem/decode-string/description)<br>
 ```python
 # 递归方法
 class Solution:
@@ -2106,7 +2099,7 @@ class MyQueue:
         return self.stack1[-1]
     # new func
     def stack2Tostack1(self):
-        while self.stack2:
+        while len(self.stack2) > 0:
             self.stack1.append(self.stack2.pop())
 ```
 
@@ -2237,26 +2230,26 @@ class Solution:
 ```python
 class Solution:
     """
-    定义dummy node
-    把m前一个和n后一个标记一下
-    把m和n之间的链表反转一下
-    //connect
-    return dummy.next
+    @param head: ListNode head is the head of the linked list 
+    @param m: An integer
+    @param n: An integer
+    @return: The head of the reversed ListNode
     """
     def reverseBetween(self, head, m, n):
         # write your code here
         dummy = ListNode(0)
         dummy.next = head
         head = dummy
+        
         for _ in range(m-1):
             head = head.next
         mprev = head
         mcurrent = head.next
-        for _ in range(m-1,n):
+        for _ in range(m-1, n):
             head = head.next
         ncurrent = head
         nplus = head.next
-        
+        # 翻转
         prev = None
         curt = mcurrent
         while curt != nplus:
@@ -2264,6 +2257,7 @@ class Solution:
             curt.next = prev
             prev = curt
             curt = tmp
+        # 拼接
         mprev.next = ncurrent
         mcurrent.next = nplus
         return dummy.next
@@ -2285,10 +2279,8 @@ class Solution:
         dummy.next = head
         
         head = dummy
-        while True:
+        while head:
             head = self.reverseK(head, k)
-            if not head:
-                break
         return dummy.next
     def reverseK(self, head, k):
         nk = head
@@ -2630,7 +2622,7 @@ class Solution:
         prefix_sum = sorted(prefix_sum, key=lambda x : x[0])
         
         closest = sys.maxsize
-        res = []
+        res = [0, 0]
         for i in range(1, len(prefix_sum)):
             if closest > prefix_sum[i][0] - prefix_sum[i-1][0]:
                 closest = prefix_sum[i][0] - prefix_sum[i-1][0]
@@ -3267,13 +3259,50 @@ class Solution:
 
 ---
 
-### 用栈实现队列
-
-[用栈实现队列](https://www.lintcode.com/problem/implement-queue-by-two-stacks/description)
-
 ### 双队列实现栈
 
-[双队列实现栈](https://www.lintcode.com/problem/implement-stack-by-two-queues/description)
+[双队列实现栈](https://www.lintcode.com/problem/implement-stack-by-two-queues/description)<br>
+```python
+from collections import deque
+class Stack:
+    """
+    @param: x: An integer
+    @return: nothing
+    """
+    queue1 = deque([])
+    queue2 = deque([])
+    def push(self, x):
+        # write your code here
+        self.queue1.append(x)
+    """
+    @return: nothing
+    """
+    def pop(self):
+        # write your code here
+        if len(self.queue1) == 1:
+            return self.queue1.popleft()
+        if len(self.queue1) > 1:
+            while len(self.queue1) > 1:
+                self.queue2.append(self.queue1.popleft())
+            return self.queue1.popleft()
+        while len(self.queue2) > 1:
+            self.queue1.append(self.queue2.popleft())
+        return self.queue2.popleft()
+    """
+    @return: An integer
+    """
+    def top(self):
+        # write your code here
+        if len(self.queue1) >= 1:
+            return self.queue1[-1]
+        return self.queue2[-1]
+    """
+    @return: True if the stack is empty
+    """
+    def isEmpty(self):
+        # write your code here
+        return len(self.queue1) == 0 and len(self.queue2) == 0
+```
 
 ### 重哈希
 
@@ -4028,3 +4057,32 @@ class Solution:
                 f[i][j] = (f[i-1][j] and s1[i-1] == s3[i+j-1]) or (f[i][j-1] and s2[j-1]== s3[i+j-1])
         return f[n][m]
 ```
+
+### 打劫房屋
+
+[打劫房屋](https://www.lintcode.com/problem/house-robber/description)<br>
+```python
+class Solution:
+    """
+    @param A: An array of non-negative integers
+    @return: The maximum amount of money you can rob tonight
+    """
+    def houseRobber(self, A):
+        # write your code here
+        if not A or len(A) == 0:
+            return 0
+        if len(A) <= 2:
+            return max(A)
+        n = len(A)
+        f = [0] * n
+        # 初始化，起点、边界
+        f[0] = A[0]
+        f[1] = max(A[0], A[1])
+        # top down
+        for i in range(2, n):
+            f[i] = max(f[i-1], f[i-2]+A[i])
+        return f[n-1]
+```
+
+###
+
