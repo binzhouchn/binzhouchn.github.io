@@ -3,7 +3,7 @@ title:  "编程-牛客-每日一刷"
 layout: post
 categories: python 编程-牛客
 tags:  Python
-author: binzhou
+author: 周彬
 ---
 
 * content
