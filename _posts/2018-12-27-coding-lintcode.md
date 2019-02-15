@@ -1372,7 +1372,7 @@ class Solution:
                 res.append(str(node.val))
                 queue.append(node.left)
                 queue.append(node.right)
-        return '{%s}' % ','.join(res)
+        return '{}'.format(','.join(res))
 
     """
     @param data: A string serialized by your serialize method.
